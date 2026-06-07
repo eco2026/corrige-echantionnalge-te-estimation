@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Statistiques - S3 (Détails Complets)</title>
+    <title>Examen de Statistiques - S3 (Version Finale)</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
@@ -197,7 +197,7 @@
         <div class="question">4/ Donner une estimation ponctuelle de la moyenne et de l'écart type du volume des futurs colis.</div>
         <div class="reponse-detail">
             <div class="etape"><strong>Calcul de la moyenne empirique (\(\bar{M}\)) :</strong></div>
-            $$\sum n_i c_i = 47 \implies \bar{M} = \frac{\sum n_i c_i}{n} = \frac{47}{95} \approx 0,49$$
+            $$\sum n_i c_i = 47 \implies \bar{M} = \frac{\sum n_i c_i}{n} = \frac{47}{95} \approx 0,42$$
             
             <div class="etape"><strong>Calcul de la variance empirique (\(S^2\)) :</strong></div>
             $$\sum n_i c_i^2 = 24,925 \implies S^2 = \frac{\sum n_i c_i^2}{n} - \bar{M}^2 = \frac{24,925}{95} - 0,22 \approx 0,022$$
@@ -255,8 +255,8 @@
             $$IC = [\bar{M} - E \ ; \ \bar{M} + E] \implies \text{Amplitude } A = b - a = 2E$$
             $$A = 2E = 0,05 \implies E = \frac{0,05}{2} = 0,025$$
             
-            <div class="etape"><strong>Étape 2 : Utilisation de la formule de l'erreur pour trouver \(Z\) :</strong></div>
-            $$E = Z_{1-\frac{\alpha}{2}} \times \frac{\sigma}{\sqrt{n}} \implies 0,025 = Z_{1-\frac{\alpha}{2}} \times \frac{0,14}{\sqrt{95}}$$
+            <div class="etape"><strong>Étape 2 : Utilisation de la formule de l'erreur pour trouver \(Z\) (avec \(\hat{\sigma}\)) :</strong></div>
+            $$E = Z_{1-\frac{\alpha}{2}} \times \frac{\hat{\sigma}}{\sqrt{n}} \implies 0,025 = Z_{1-\frac{\alpha}{2}} \times \frac{0,14}{\sqrt{95}}$$
             $$Z_{1-\frac{\alpha}{2}} = \frac{0,025 \times \sqrt{95}}{0,14} \implies Z_{1-\frac{\alpha}{2}} = 1,74$$
             
             <div class="etape"><strong>Étape 3 : Recherche du niveau de confiance dans la table :</strong></div>
