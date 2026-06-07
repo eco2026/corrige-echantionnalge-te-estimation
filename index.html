@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Statistiques - S3 (Détails Complets)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #1e293b;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        .section-ex {
+            margin-bottom: 40px;
+            border-left: 5px solid #2563eb;
+            padding-left: 20px;
+        }
+        h2 {
+            color: #2563eb;
+            font-size: 1.5rem;
+        }
+        .enonce {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            font-style: italic;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .reponse-detail {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .etape {
+            margin-bottom: 10px;
+            color: #475569;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #94a3b8;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #e2e8f0;
+        }
+        .encadre {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #f0fdf4;
+            border: 2px solid #16a34a;
+            color: #166534;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .encadre-bleu {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #eff6ff;
+            border: 2px solid #2563eb;
+            color: #1d4ed8;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .note-copie {
+            color: #b91c1c;
+            font-size: 0.9em;
+            background: #fef2f2;
+            padding: 5px 10px;
+            border-left: 3px solid #ef4444;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Examen de Statistiques - S3</h1>
+
+    <div class="section-ex">
+        <h2>Problème : Les salaires (Loi Normale)</h2>
+        <div class="enonce">
+            Les salaires d'une catégorie d'employés sont distribués normalement avec une moyenne de <strong>5950 DHS</strong> par mois et un écart-type de <strong>595 DHS</strong>.<br>
+            Soit \(X\) la variable aléatoire : \(X \sim \mathcal{N}(5950, 595)\).
+        </div>
+
+        <div class="question">1/ Quelle proportion des employés ont un salaire compris entre 5430 DHS et 6450 DHS ?</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Étape 1 : Écriture de la probabilité et centrage-réduction :</strong></div>
+            $$P(5430 \le X \le 6450) = F\left(\frac{6450 - 5950}{595}\right) - F\left(\frac{5430 - 5950}{595}\right)$$
+            
+            <div class="etape"><strong>Étape 2 : Calcul des valeurs :</strong></div>
+            $$= F\left(\frac{500}{595}\right) - F\left(\frac{-520}{595}\right)$$
+            $$= F(0,84) - F(-0,87)$$
+            
+            <div class="etape"><strong>Étape 3 : Utilisation de la propriété de symétrie \(F(-x) = 1 - F(x)\) :</strong></div>
+            $$= F(0,84) - [1 - F(0,87)]$$
+            
+            <div class="etape"><strong>Étape 4 : Lecture de la table de la loi normale :</strong></div>
+            $$= 0,7995 - (1 - 0,8078)$$
+            $$= 0,7995 - 0,1922 = 0,6073$$
+            <div class="note-copie">Note sur la copie : Le calcul manuscrit indique \(= 0,599 \implies 59,9\%\).</div>
+        </div>
+
+        <div class="question">2/ Quel est le pourcentage des employés de cette catégorie dont le salaire est supérieur à 6350 DHS par mois ?</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Étape 1 : Passage à l'événement contraire :</strong></div>
+            $$P(X > 6350) = 1 - P(X \le 6350)$$
+            
+            <div class="etape"><strong>Étape 2 : Centrage et réduction :</strong></div>
+            $$= 1 - F\left(\frac{6350 - 5950}{595}\right)$$
+            $$= 1 - F\left(\frac{400}{595}\right) = 1 - F(0,67)$$
+            
+            <div class="etape"><strong>Étape 3 : Lecture de la table et résultat final :</strong></div>
+            $$= 1 - 0,7486 = 0,2514$$
+            <div class="encadre">Résultat : 25,14%</div>
+        </div>
+
+        <div class="question">3/ Trouver le salaire S qui doit être inférieur aux salaires des 9,85 % des employés les mieux payés.</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Étape 1 : Traduction mathématique ("Cherchons S") :</strong></div>
+            $$P[S < X] = 9,85\% = 0,0985$$
+            
+            <div class="etape"><strong>Étape 2 : Passage à la fonction de répartition \(F\) :</strong></div>
+            $$1 - P[X \le S] = 0,0985 \implies P[X \le S] = 1 - 0,0985 = 0,9015$$
+            $$F\left(\frac{S - 5950}{595}\right) = 0,9015$$
+            
+            <div class="etape"><strong>Étape 3 : Recherche inverse dans la table (Trouver \(Z\) pour \(F(Z) = 0,9015\)) :</strong></div>
+            On trouve \(Z = 1,29\), d'où :
+            $$\frac{S - 5950}{595} = 1,29$$
+            
+            <div class="etape"><strong>Étape 4 : Résolution de l'équation pour trouver S :</strong></div>
+            $$S = 1,29 \times 595 + 5950 = 767,55 + 5950$$
+            <div class="encadre">S = 6717,55 DHS</div>
+        </div>
+    </div>
+
+    <div class="section-ex">
+        <h2>Problème : Loi Normale & Loi Student (Colis volumineux)</h2>
+        <div class="enonce">
+            Tableau de l'échantillon des colis transportés :
+            <table>
+                <tr>
+                    <th>\(X\) : volume en \(m^3\)</th>
+                    <td>[0,2 - 0,4]</td>
+                    <td>[0,4 - 0,5]</td>
+                    <td>[0,5 - 0,6]</td>
+                    <td>[0,6 - 1]</td>
+                </tr>
+                <tr>
+                    <th>Nombre de colis (\(n_i\))</th>
+                    <td>15</td>
+                    <td>40</td>
+                    <td>30</td>
+                    <td>10</td>
+                </tr>
+            </table>
+            Effectif total : \(n = \sum n_i = 95\)
+        </div>
+
+        <div class="question">4/ Donner une estimation ponctuelle de la moyenne et de l'écart type du volume des futurs colis.</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Calcul de la moyenne empirique (\(\bar{M}\)) :</strong></div>
+            $$\sum n_i c_i = 47 \implies \bar{M} = \frac{\sum n_i c_i}{n} = \frac{47}{95} \approx 0,49$$
+            
+            <div class="etape"><strong>Calcul de la variance empirique (\(S^2\)) :</strong></div>
+            $$\sum n_i c_i^2 = 24,925 \implies S^2 = \frac{\sum n_i c_i^2}{n} - \bar{M}^2 = \frac{24,925}{95} - 0,22 \approx 0,022$$
+            $$S = \sqrt{0,022} = 0,14$$
+            
+            <div class="etape"><strong>Estimations ponctuelles (\(\hat{\mu}\) et \(\hat{\sigma}\)) :</strong></div>
+            $$\hat{\mu} = \bar{M} = 0,49$$
+            $$\hat{\sigma} = \sqrt{\frac{n}{n-1}} \times S = \sqrt{\frac{95}{94}} \times 0,14 = 0,14$$
+            <div class="encadre-bleu">\(\hat{\mu} = 0,49\) et \(\hat{\sigma} = 0,14\)</div>
+        </div>
+
+        <div class="question">5/ Estimer le volume moyen des futurs colis par un intervalle de confiance à 88 %.</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Vérification de la condition :</strong> Comme \(n = 95 > 30 \implies\) Loi Normale.</div>
+            <div class="etape"><strong>Détermination du seuil :</strong> \(88\% \implies \alpha = 12\%\)</div>
+            $$1 - \frac{\alpha}{2} = 1 - 0,06 = 0,94 \implies Z_{1-\frac{\alpha}{2}} = 1,56$$
+            
+            <div class="etape"><strong>Calcul de la marge d'erreur (E) :</strong></div>
+            $$E = Z_{1-\frac{\alpha}{2}} \times \frac{\hat{\sigma}}{\sqrt{n}} = 1,56 \times \frac{0,14}{\sqrt{95}} = 0,022$$
+            
+            <div class="etape"><strong>Formule de l'Intervalle de Confiance :</strong></div>
+            $$IC = [\bar{M} - E \ ; \ \bar{M} + E] = [0,49 - 0,022 \ ; \ 0,49 + 0,022]$$
+            <div class="encadre">IC = [0,468 ; 0,512]</div>
+        </div>
+
+        <div class="question">6/ Donner une estimation ponctuelle de la proportion des colis dont le volume dépasse 0,5 \(m^3\).</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Calcul de la proportion de l'échantillon (\(\bar{p}\)) :</strong></div>
+            Pour volume \(> 0,5\), on prend les effectifs des deux dernières classes : \(30 + 10 = 40\).
+            $$\bar{p} = \frac{30 + 40}{95} = \frac{40}{95} = 0,42$$
+            <div class="encadre-bleu">Estimation ponctuelle : \(\hat{p} = \bar{p} = 0,42\)</div>
+        </div>
+
+        <div class="question">7/ Donner une estimation de cette proportion par intervalle de confiance au seuil de risque de 1 %.</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Conditions de validité :</strong></div>
+            $$n\bar{p} = 95 \times 0,42 = 40 > 5$$
+            $$n\bar{q} = 95 \times 0,58 = 55 > 5 \implies \text{Loi Normale}$$
+            
+            <div class="etape"><strong>Détermination de la valeur critique :</strong> Seuil de risque \(\alpha = 1\%\)</div>
+            $$1 - \frac{\alpha}{2} = 0,995 \implies Z_{1-\frac{\alpha}{2}} = 2,58$$
+            
+            <div class="etape"><strong>Calcul de l'erreur (E) :</strong></div>
+            $$E = 2,58 \times \sqrt{\frac{0,42 \times 0,58}{95}} = 2,58 \times \sqrt{\frac{0,2436}{95}} = 0,129$$
+            
+            <div class="etape"><strong>Calcul de l'intervalle :</strong></div>
+            $$IC = [\bar{p} - E \ ; \ \bar{p} + E] = [0,42 - 0,129 \ ; \ 0,42 + 0,129]$$
+            <div class="encadre">IC = [0,29 ; 0,55]</div>
+            <div class="etape" style="margin-top:10px;"><em>Interprétation : On est sûr à 99% que la proportion des volumes est entre 29% et 55%.</em></div>
+        </div>
+
+        <div class="question">8/ À quel niveau de confiance correspondrait un intervalle d'amplitude 0,05 \(m^3\) ? Interpréter.</div>
+        <div class="reponse-detail">
+            <div class="etape"><strong>Étape 1 : Relation entre amplitude (A) et marge d'erreur (E) :</strong></div>
+            $$IC = [\bar{M} - E \ ; \ \bar{M} + E] \implies \text{Amplitude } A = b - a = 2E$$
+            $$A = 2E = 0,05 \implies E = \frac{0,05}{2} = 0,025$$
+            
+            <div class="etape"><strong>Étape 2 : Utilisation de la formule de l'erreur pour trouver \(Z\) :</strong></div>
+            $$E = Z_{1-\frac{\alpha}{2}} \times \frac{\sigma}{\sqrt{n}} \implies 0,025 = Z_{1-\frac{\alpha}{2}} \times \frac{0,14}{\sqrt{95}}$$
+            $$Z_{1-\frac{\alpha}{2}} = \frac{0,025 \times \sqrt{95}}{0,14} \implies Z_{1-\frac{\alpha}{2}} = 1,74$$
+            
+            <div class="etape"><strong>Étape 3 : Recherche du niveau de confiance dans la table :</strong></div>
+            $$F(Z_{1-\frac{\alpha}{2}}) = F(1,74) = 0,9591$$
+            $$1 - \frac{\alpha}{2} = 0,9591 \implies \frac{\alpha}{2} = 1 - 0,9591 = 0,0409$$
+            $$\alpha = 0,0409 \times 2 = 0,0818 \implies \alpha = 8,18\% \text{ (Seuil de risque)}$$
+            
+            <div class="etape"><strong>Étape 4 : Niveau de confiance final :</strong></div>
+            $$\text{Niveau de confiance } = 100\% - 8,18\% = 91,82\%$$
+            <div class="encadre">Niveau de confiance = 91,82%</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
